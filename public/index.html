@@ -15,7 +15,7 @@
             var refreshTime = setInterval(function () {
                 $.get("/abc", {rownum: count}, function (response) {
                     var html = $("<tr><td>" + response.id + "</td><td> " + response.AccentCity + "</td><td>" + response.Lat + "</td> </tr>");
-                    $("#output").append(html);
+                    $("#output").append(html).animate({left: '250px'});
                     html.show(220);
                     html.delay(9999).hide(220);
                 }, "json");
@@ -52,7 +52,7 @@
     //    });
 </script>
 <div id="row"></div>
-<table id="output"></table>
+<table id="output" style=position:absolute;></table>
 <button type="button" data-remote="true" id="xyz" >Click Me!</button>
 </body>
 </html>
