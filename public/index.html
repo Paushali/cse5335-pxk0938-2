@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    var i=1;
+    $(document).ready(function () {
+        $("#xyz").click(function () {
+            console.log("button clicked");
+            var count = 0;
+            var refreshTime = setInterval(function () {
+                $.get("/abc", {rownum: count}, function (response) {
+                    var html = $("<tr><td>" + response.id + "</td><td> " + response.AccentCity + "</td><td>" + response.Lat + "</td> </tr>");
+                    $("#output").append(html);
+                    html.show(220);
+                    html.delay(9999).hide(220);
+                }, "json");
+                count += 1;
+            }, 500);
+        })
+    })
+
+    //console.log("button clicked");
+    //
+    //            while(i<100) {
+    //
+    //                    console.log("i value " + i);
+    //                    $.get("/abc", {rownum: i}, function (response) {
+    //                        console.log(response);
+    //                        var html = $("<tr><td>" + response.id + "</td><td> " + response.AccentCity + "</td><td>" + response.Lat + "</td> </tr>");
+    //                        setTimeout(function () {
+    //                        $("#output").append(html);
+    //                        },1000);
+    //                    });
+    //                    i++;
+    //
+    //            }
+    //
+    //        })
+    //
+    //        })
+
+    //    $.getJSON("http://path/to/file.php", {cid: href, format: 'json'}, function(results){
+    //        $("#container").html("");
+    //        $.each(results, function(key,value){
+    //            $("#my_div").append(results.field2 + " - " + results.content + "<br>");
+    //        });
+    //    });
+</script>
+<div id="row"></div>
+<table id="output"></table>
+<button type="button" data-remote="true" id="xyz" >Click Me!</button>
+</body>
+</html>
