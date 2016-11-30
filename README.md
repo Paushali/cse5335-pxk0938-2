@@ -1,5 +1,7 @@
 #Visit https://cse5335-pxk0938-2.herokuapp.com/ for the project website
 ##(Used node.js for this project)
+## Please note that the animation happens after around 10-15 seconds while the rows start disappearing (fading out) after 20 records apart from the table entry.
+
 ##a. What SQL or NOSQL database did you choose and why?
 I used MongoDB (connected through Heroku mLabs)  as a part of learning experience for this project. I had never used this database before. 
 Therefore, this database helped me understand the way the NoSQL databases work.
