@@ -13,7 +13,7 @@ var path = require('path');
 var MongoClient = require('mongodb');
 
 var app = express();
-var url= 'mongodb://Admin:admin@ds111748.mlab.com:11748/heroku_hmdkkdxq';
+var url= 'mongodb://Admin:<pass>@ds111748.mlab.com:11748/heroku_hmdkkdxq';
 var db;
 
 app.use('/', express.static(path.join(__dirname, 'public')));
